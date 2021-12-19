@@ -35,12 +35,13 @@ except:
 # creating window
 root = tk.Tk()
 
-# getting screen width and height of display
-width = root.winfo_screenwidth()
-height = root.winfo_screenheight()
-# setting tkinter window size
-root.geometry("%dx%d" % (width, height))
+root.geometry("950x950")
 root.title("Inventory Management System")
+
+root.columnconfigure(0, weight=1)
+
+main = ttk.Frame(root, padding=(30, 15))
+main.grid()  # column=0 row=0 by default
 
 my_menu = tk.Menu(root)
 root.config(menu=my_menu)
@@ -48,23 +49,37 @@ file_menu = tk.Menu(my_menu, tearoff=False)
 my_menu.add_cascade(label="File", menu=file_menu)
 file_menu.add_command(label="Quit", command=quit)
 
-label = ttk.Label(root, text="Welcome to DIMS!", padding=20)
-label.config(font=("Segoe UI", 20))  # Could be in the constructor instead.
-label.pack()
+welcome_label = ttk.Label(main, text="Welcome to DIMS!",background="#65c09b",
+                  foreground="white")
+welcome_label.config(font=("Segoe UI", 20))
+welcome_label.pack(ipadx=10, ipady=10)
 
-label = ttk.Label(root, text="Login", padding=20)
-label.config(font=("Segoe UI", 10))  # Could be in the constructor instead.
-label.pack(side="left", padx=50)
+login_label = ttk.Label(main, text="Login Screen", background="#65c09b",
+                  foreground="white")
+login_label.config(font=("Segoe UI", 15))  # Could be in the constructor
+# instead.
+login_label.pack(ipadx=10, ipady=10)
 
-label = ttk.Label(root, text="Username: ", padding=20)
-label.config(font=("Segoe UI", 10))  # Could be in the constructor instead.
-label.pack(side="left", padx=50)
+username_label = ttk.Label(main, text="Username: ", padding=20)
+username_label.config(font=("Segoe UI", 10))
+username_label.pack(side="left", padx=5)
 
-label = ttk.Label(root, text="Password: ", padding=20)
-label.config(font=("Segoe UI", 10))  # Could be in the constructor instead.
-label.pack(side="left", padx=50)
+username_text = ttk.Entry(main, text="Username")
+#username_text.pack(side="left", padx=5)
+#username_text.insert("1.0", "Username")  # Can use \n to insert multiple lines.
 
-quit_button = ttk.Button(root, text="Quit", command=root.destroy)
+password_label = ttk.Label(main, text="Password: ", padding=20)
+password_label.config(font=("Segoe UI", 10))  # Could be in the constructor instead.
+password_label.pack(side="left", padx=5)
+
+password_text = ttk.Entry(main, text="Password")
+#password_text.pack(side="left", padx=5)
+#password_text.insert("1.0", "Password")
+
+temporary_button = ttk.Button(main, text="Move On")
+temporary_button.pack(side="right", padx=50)
+
+quit_button = ttk.Button(main, text="Quit", command=root.destroy)
 quit_button.pack(side="right", padx=50)
 
 root.mainloop()
