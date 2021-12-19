@@ -15,8 +15,6 @@ PyLint:
 Unit Test:
 REMAINING PROBLEMS
 DESCRIPTION OF FUNCTIONALITY
-
-
 Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 """
 # importing tkinter for gui
@@ -64,17 +62,16 @@ username_label = ttk.Label(main, text="Username: ", padding=20)
 username_label.config(font=("Segoe UI", 10))
 username_label.pack(side="left", padx=5)
 
-username_text = ttk.Entry(main, text="Username")
-#username_text.pack(side="left", padx=5)
-#username_text.insert("1.0", "Username")  # Can use \n to insert multiple lines.
+username_text = ttk.Entry(main, width=10)
+username_text.pack(side="left", padx=5)
+username_text.focus()
 
 password_label = ttk.Label(main, text="Password: ", padding=20)
 password_label.config(font=("Segoe UI", 10))  # Could be in the constructor instead.
 password_label.pack(side="left", padx=5)
 
-password_text = ttk.Entry(main, text="Password")
-#password_text.pack(side="left", padx=5)
-#password_text.insert("1.0", "Password")
+password_text = ttk.Entry(main, width=10)
+password_text.pack(side="left", padx=5)
 
 temporary_button = ttk.Button(main, text="Move On")
 temporary_button.pack(side="right", padx=50)
