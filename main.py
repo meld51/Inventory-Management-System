@@ -1,24 +1,25 @@
 """
-Created by Mel Davies on 17/12/2021
+Created by Mel Davies on 20/12/2021
 PROGRAMMING LANGUAGE: Python 3
-SCRIPT NAME: Domestic Inventory Management System
-VERSION = 0.1
-SCRIPT STATUS = WIP
+SCRIPT NAME:
+VERSION = 0.0
+SCRIPT STATUS =
 SCRIPT PURPOSE:
 TARGET SYSTEM: Windows 10
 INTERFACE: Command Line or Pycharm
 DEVELOPMENT ENVIRONMENT: Pycharm
 NON FUNCTIONAL REQUIREMENTS:
 FUNCTIONAL REQUIREMENTS:
-TESTING:
+TESTING: 
 PyLint:
 Unit Test:
 REMAINING PROBLEMS
 DESCRIPTION OF FUNCTIONALITY
-Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
+WEBSITES
+1. Grids
+https://www.pythontutorial.net/tkinter/tkinter-grid/
 """
-# importing tkinter for gui
-# importing tkinter gui
 import tkinter as tk
 from tkinter import ttk
 
@@ -30,53 +31,56 @@ except:
     pass
 # -- End Windows only configuration --
 
-# creating window
+# root window
 root = tk.Tk()
+root.geometry("240x200")
+root.title('Inventory Management System')
+root.resizable(0, 0)
 
-root.geometry("950x950")
-root.title("Inventory Management System")
-
+# configure the grid
 root.columnconfigure(0, weight=1)
+root.columnconfigure(1, weight=3)
 
-main = ttk.Frame(root, padding=(30, 15))
-main.grid()  # column=0 row=0 by default
-
+# Provide a menu
 my_menu = tk.Menu(root)
 root.config(menu=my_menu)
 file_menu = tk.Menu(my_menu, tearoff=False)
 my_menu.add_cascade(label="File", menu=file_menu)
 file_menu.add_command(label="Quit", command=quit)
 
-welcome_label = ttk.Label(main, text="Welcome to DIMS!",background="#65c09b",
-                  foreground="white")
-welcome_label.config(font=("Segoe UI", 20))
-welcome_label.pack(ipadx=10, ipady=10)
+#welcome_label = ttk.Label(root, text="Welcome to DIMS!",background="#65c09b",
+#                  foreground="white")
+#welcome_label.config(font=("Segoe UI", 20))
+#welcome_label.grid(column=0, row=0, sticky=tk.W, padx=5, pady=5)
 
-login_label = ttk.Label(main, text="Login Screen", background="#65c09b",
-                  foreground="white")
-login_label.config(font=("Segoe UI", 15))  # Could be in the constructor
-# instead.
-login_label.pack(ipadx=10, ipady=10)
+#login_label = ttk.Label(root, text="Login Screen", background="#65c09b",
+#                  foreground="white")
+#login_label.grid(column=1, row=0)
+#login_label.config(font=("Segoe UI", 15))
 
-username_label = ttk.Label(main, text="Username: ", padding=20)
-username_label.config(font=("Segoe UI", 10))
-username_label.pack(side="left", padx=5)
+# username
+username_label = ttk.Label(root, text="Username:")
+username_label.grid(column=0, row=2, sticky=tk.W, padx=5, pady=5)
 
-username_text = ttk.Entry(main, width=10)
-username_text.pack(side="left", padx=5)
-username_text.focus()
+username_entry = ttk.Entry(root)
+username_entry.grid(column=1, row=2, sticky=tk.W, padx=5, pady=5)
+username_entry.focus()
 
-password_label = ttk.Label(main, text="Password: ", padding=20)
-password_label.config(font=("Segoe UI", 10))  # Could be in the constructor instead.
-password_label.pack(side="left", padx=5)
+# password
+password_label = ttk.Label(root, text="Password:")
+password_label.grid(column=0, row=3, sticky=tk.W, padx=5, pady=5)
 
-password_text = ttk.Entry(main, width=10)
-password_text.pack(side="left", padx=5)
+password_entry = ttk.Entry(root,  show="*")
+password_entry.grid(column=1, row=3, sticky=tk.W, padx=5, pady=5)
 
-temporary_button = ttk.Button(main, text="Move On")
-temporary_button.pack(side="right", padx=50)
+# login button
+login_button = ttk.Button(root, text="Login")
+login_button.grid(column=1, row=5, sticky=tk.W, padx=5, pady=5)
 
-quit_button = ttk.Button(main, text="Quit", command=root.destroy)
-quit_button.pack(side="right", padx=50)
+quit_button = ttk.Button(root, text="Quit", command=root.destroy)
+quit_button.grid(column=1, row=6, sticky=tk.W, padx=5, pady=5)
+
+temporary_button = ttk.Button(root, text="Move On")
+temporary_button.grid(column=1, row=7, sticky=tk.W, padx=5, pady=5)
 
 root.mainloop()
