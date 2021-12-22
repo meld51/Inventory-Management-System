@@ -26,8 +26,10 @@ https://www.tutorialspoint.com/how-to-create-a-splash-screen-using-tkinter
 
 # TODO Give the splash a picture
 
+from tkinter import *
 import tkinter as tk
 from tkinter import ttk
+from PIL import ImageTk,Image
 
 # -- Windows only configuration --
 try:
@@ -107,6 +109,25 @@ splash_win.geometry("%dx%d+%d+%d" % (800, 800, MyLeftPos, myTopPos))
 # Set the title of the window
 splash_win.title("Splash")
 
+
+
+# Background Image
+canvas = tk.Canvas(
+        splash_win,
+        width=500,
+        height=500
+        )
+
+canvas.pack()
+
+img = ImageTk.PhotoImage(Image.open('Images/background_1.jpg'))
+
+canvas.create_image(
+        10,
+        10,
+        anchor=NW,
+        image=img
+)
 # Splash Window Timer
 splash_win.after(1000, login_window)
 splash_win.mainloop()
