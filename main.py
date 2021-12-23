@@ -102,14 +102,17 @@ def login_window():
 splash_win = tk.Tk()
 splash_win.title('Inventory Management System')
 splash_win.resizable(0, 0)
-MyLeftPos = (splash_win.winfo_screenwidth() - 800) / 2
-myTopPos = (splash_win.winfo_screenheight() - 800) / 2
-splash_win.geometry("%dx%d+%d+%d" % (800, 800, MyLeftPos, myTopPos))
+MyLeftPos = (splash_win.winfo_screenwidth() - 550) / 2
+myTopPos = (splash_win.winfo_screenheight() - 500) / 2
+splash_win.geometry("%dx%d+%d+%d" % (550, 500, MyLeftPos, myTopPos))
 
 # Set the title of the window
 splash_win.title("Splash")
 
-
+welcome_label = ttk.Label(splash_win, text="Welcome to DIMS!",
+                          background="#65c09b", foreground="white",
+                          font=("Segoe UI",25)).pack()
+#tk.Label(splash_win, text="Label 2", bg="red").pack(side="left")
 
 # Background Image
 canvas = tk.Canvas(
