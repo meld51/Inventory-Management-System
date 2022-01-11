@@ -40,6 +40,55 @@ except:
 # -- End Windows only configuration --
 
 
+def choice():
+    decision_window = tk.Tk()
+    decision_window.title("Decision Window")
+    decision_window.resizable(0, 0)
+    MyLeftPos = (decision_window.winfo_screenwidth() - 550) / 2
+    myTopPos = (decision_window.winfo_screenheight() - 500) / 2
+    decision_window.geometry("%dx%d+%d+%d" % (550, 500, MyLeftPos, myTopPos))
+
+    info_label = ttk.Label(decision_window, text="Choose an Option",
+                              background="#65c09b", foreground="white",
+                              font=("Segoe UI", 25))
+    info_label.grid(column=1, row=1)
+
+
+    # stock location button
+    login_button = ttk.Button(decision_window, text="Stock Location")
+    login_button.grid(column=1, row=2, sticky=tk.W, padx=5, pady=5)
+
+    # stock items button
+    login_button = ttk.Button(decision_window, text="Stock Items")
+    login_button.grid(column=1, row=3, sticky=tk.W, padx=5, pady=5)
+
+    # stock finder button
+    login_button = ttk.Button(decision_window, text="Stock Finder")
+    login_button.grid(column=1, row=4, sticky=tk.W, padx=5, pady=5)
+
+    # stock counter button
+    login_button = ttk.Button(decision_window, text="Stock Counter")
+    login_button.grid(column=1, row=5, sticky=tk.W, padx=5, pady=5)
+
+    # stock sorter button
+    login_button = ttk.Button(decision_window, text="Stock Sorter")
+    login_button.grid(column=1, row=6, sticky=tk.W, padx=5, pady=5)
+
+    # shortages button
+    login_button = ttk.Button(decision_window, text="Shortages")
+    login_button.grid(column=1, row=7, sticky=tk.W, padx=5, pady=5)
+
+    # orders button
+    login_button = ttk.Button(decision_window, text="Orders")
+    login_button.grid(column=1, row=8, sticky=tk.W, padx=5, pady=5)
+
+    # logout button
+    login_button = ttk.Button(decision_window, text="Logout")
+    login_button.grid(column=1, row=9, sticky=tk.W, padx=5, pady=5)
+
+    decision_window.mainloop()
+
+
 def login_window():
     """define login window"""
     login_window = tk.Tk()
@@ -92,7 +141,7 @@ def login_window():
     quit_button = ttk.Button(login_window, text="Quit", command=login_window.destroy)
     quit_button.grid(column=1, row=6, sticky=tk.W, padx=5, pady=5)
 
-    temporary_button = ttk.Button(login_window, text="Move On")
+    temporary_button = ttk.Button(login_window, text="Move On", command=choice)
     temporary_button.grid(column=1, row=7, sticky=tk.W, padx=5, pady=5)
 
     login_window.mainloop()
@@ -107,7 +156,7 @@ myTopPos = (splash_win.winfo_screenheight() - 500) / 2
 splash_win.geometry("%dx%d+%d+%d" % (550, 500, MyLeftPos, myTopPos))
 
 # Set the title of the window
-splash_win.title("Splash")
+#splash_win.title("Splash")
 
 welcome_label = ttk.Label(splash_win, text="Welcome to DIMS!",
                           background="#65c09b", foreground="white",
@@ -134,3 +183,6 @@ canvas.create_image(
 # Splash Window Timer
 splash_win.after(1000, login_window)
 splash_win.mainloop()
+
+
+
