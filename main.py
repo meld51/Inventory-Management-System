@@ -29,7 +29,7 @@ https://www.tutorialspoint.com/how-to-create-a-splash-screen-using-tkinter
 from tkinter import *
 import tkinter as tk
 from tkinter import ttk
-from PIL import ImageTk,Image
+from PIL import ImageTk, Image
 
 # -- Windows only configuration --
 try:
@@ -43,6 +43,7 @@ except:
 def size_window():
     pass
 
+
 def logout():
     pass
 
@@ -52,9 +53,9 @@ def stock_location():
     stock_location_window.title("Stock Location Window")
 
     stock_location_window.resizable(0, 0)
-    MyLeftPos = (stock_location_window.winfo_screenwidth() - 550) / 2
-    myTopPos = (stock_location_window.winfo_screenheight() - 500) / 2
-    stock_location_window.geometry("%dx%d+%d+%d" % (550, 500, MyLeftPos, myTopPos))
+    my_left_pos = (stock_location_window.winfo_screenwidth() - 550) / 2
+    my_top_pos = (stock_location_window.winfo_screenheight() - 500) / 2
+    stock_location_window.geometry("%dx%d+%d+%d" % (550, 500, my_left_pos, my_top_pos))
 
     stock_location_window.mainloop()
 
@@ -62,36 +63,77 @@ def stock_location():
 def stock_items():
     stock_items_window = tk.Tk()
     stock_items_window.title("Stock Items Window")
+
+    stock_items_window.resizable(0, 0)
+    my_left_pos = (stock_items_window.winfo_screenwidth() - 550) / 2
+    my_top_pos = (stock_items_window.winfo_screenheight() - 500) / 2
+    stock_items_window.geometry(
+        "%dx%d+%d+%d" % (550, 500, my_left_pos, my_top_pos))
+
     stock_items_window.mainloop()
 
 
 def stock_finder():
     stock_finder_window = tk.Tk()
     stock_finder_window.title("Stock Finder")
+
+    stock_finder_window.resizable(0, 0)
+    my_left_pos = (stock_finder_window.winfo_screenwidth() - 550) / 2
+    my_top_pos = (stock_finder_window.winfo_screenheight() - 500) / 2
+    stock_finder_window.geometry(
+        "%dx%d+%d+%d" % (550, 500, my_left_pos, my_top_pos))
+
     stock_finder_window.mainloop()
 
 
 def stock_counter():
     stock_counter_win = tk.Tk()
     stock_counter_win.title("Stock Counter")
+
+    stock_counter_win.resizable(0, 0)
+    my_left_pos = (stock_counter_win.winfo_screenwidth() - 550) / 2
+    my_top_pos = (stock_counter_win.winfo_screenheight() - 500) / 2
+    stock_counter_win.geometry(
+        "%dx%d+%d+%d" % (550, 500, my_left_pos, my_top_pos))
+
     stock_counter_win.mainloop()
 
 
 def stock_sorter():
     stock_sorter_win = tk.Tk()
     stock_sorter_win.title("Stock Sorter")
+
+    stock_sorter_win.resizable(0, 0)
+    my_left_pos = (stock_sorter_win.winfo_screenwidth() - 550) / 2
+    my_top_pos = (stock_sorter_win.winfo_screenheight() - 500) / 2
+    stock_sorter_win.geometry(
+        "%dx%d+%d+%d" % (550, 500, my_left_pos, my_top_pos))
+
     stock_sorter_win.mainloop()
 
 
 def shortages():
     shortages_win = tk.Tk()
     shortages_win.title("Shortages")
+
+    shortages_win.resizable(0, 0)
+    my_left_pos = (shortages_win.winfo_screenwidth() - 550) / 2
+    my_top_pos = (shortages_win.winfo_screenheight() - 500) / 2
+    shortages_win.geometry(
+        "%dx%d+%d+%d" % (550, 500, my_left_pos, my_top_pos))
+
     shortages_win.mainloop()
 
 
 def orders():
     orders_win = tk.Tk()
     orders_win.title("Orders")
+
+    orders_win.resizable(0, 0)
+    my_left_pos = (orders_win.winfo_screenwidth() - 550) / 2
+    my_top_pos = (orders_win.winfo_screenheight() - 500) / 2
+    orders_win.geometry("%dx%d+%d+%d" % (550, 500, my_left_pos, my_top_pos))
+
     orders_win.mainloop()
 
 
@@ -100,15 +142,14 @@ def choice():
     decision_window = tk.Tk()
     decision_window.title("Decision Window")
     decision_window.resizable(0, 0)
-    MyLeftPos = (decision_window.winfo_screenwidth() - 550) / 2
-    myTopPos = (decision_window.winfo_screenheight() - 500) / 2
-    decision_window.geometry("%dx%d+%d+%d" % (550, 500, MyLeftPos, myTopPos))
+    my_left_pos = (decision_window.winfo_screenwidth() - 550) / 2
+    my_top_pos = (decision_window.winfo_screenheight() - 500) / 2
+    decision_window.geometry("%dx%d+%d+%d" % (550, 500, my_left_pos, my_top_pos))
 
     info_label = ttk.Label(decision_window, text="Choose an Option",
-                              background="#65c09b", foreground="white",
-                              font=("Segoe UI", 25))
+                           background="#65c09b", foreground="white",
+                           font=("Segoe UI", 25))
     info_label.grid(column=1, row=1)
-
 
     # stock location button
     login_button = ttk.Button(decision_window,
@@ -223,17 +264,17 @@ def login_window():
 splash_win = tk.Tk()
 splash_win.title('Inventory Management System')
 splash_win.resizable(0, 0)
-MyLeftPos = (splash_win.winfo_screenwidth() - 550) / 2
-myTopPos = (splash_win.winfo_screenheight() - 500) / 2
-splash_win.geometry("%dx%d+%d+%d" % (550, 500, MyLeftPos, myTopPos))
+my_left_pos = (splash_win.winfo_screenwidth() - 550) / 2
+my_top_pos = (splash_win.winfo_screenheight() - 500) / 2
+splash_win.geometry("%dx%d+%d+%d" % (550, 500, my_left_pos, my_top_pos))
 
 # Set the title of the window
-#splash_win.title("Splash")
+# splash_win.title("Splash")
 
 welcome_label = ttk.Label(splash_win, text="Welcome to DIMS!",
                           background="#65c09b", foreground="white",
-                          font=("Segoe UI",25)).pack()
-#tk.Label(splash_win, text="Label 2", bg="red").pack(side="left")
+                          font=("Segoe UI", 25)).pack()
+# tk.Label(splash_win, text="Label 2", bg="red").pack(side="left")
 
 # Background Image
 canvas = tk.Canvas(
@@ -255,6 +296,3 @@ canvas.create_image(
 # Splash Window Timer
 splash_win.after(1000, login_window)
 splash_win.mainloop()
-
-
-
