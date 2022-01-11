@@ -40,35 +40,59 @@ except:
 # -- End Windows only configuration --
 
 
+def size_window():
+    pass
+
 def logout():
     pass
 
 
 def stock_location():
-    pass
+    stock_location_window = tk.Tk()
+    stock_location_window.title("Stock Location Window")
+
+    stock_location_window.resizable(0, 0)
+    MyLeftPos = (stock_location_window.winfo_screenwidth() - 550) / 2
+    myTopPos = (stock_location_window.winfo_screenheight() - 500) / 2
+    stock_location_window.geometry("%dx%d+%d+%d" % (550, 500, MyLeftPos, myTopPos))
+
+    stock_location_window.mainloop()
 
 
 def stock_items():
-    pass
+    stock_items_window = tk.Tk()
+    stock_items_window.title("Stock Items Window")
+    stock_items_window.mainloop()
 
 
 def stock_finder():
-    pass
+    stock_finder_window = tk.Tk()
+    stock_finder_window.title("Stock Finder")
+    stock_finder_window.mainloop()
+
 
 def stock_counter():
-    pass
+    stock_counter_win = tk.Tk()
+    stock_counter_win.title("Stock Counter")
+    stock_counter_win.mainloop()
 
 
 def stock_sorter():
-    pass
+    stock_sorter_win = tk.Tk()
+    stock_sorter_win.title("Stock Sorter")
+    stock_sorter_win.mainloop()
 
 
 def shortages():
-    pass
+    shortages_win = tk.Tk()
+    shortages_win.title("Shortages")
+    shortages_win.mainloop()
 
 
 def orders():
-    pass
+    orders_win = tk.Tk()
+    orders_win.title("Orders")
+    orders_win.mainloop()
 
 
 def choice():
@@ -87,35 +111,51 @@ def choice():
 
 
     # stock location button
-    login_button = ttk.Button(decision_window, text="Stock Location")
+    login_button = ttk.Button(decision_window,
+                              text="Stock Location",
+                              command=stock_location)
     login_button.grid(column=1, row=2, sticky=tk.W, padx=5, pady=5)
 
     # stock items button
-    login_button = ttk.Button(decision_window, text="Stock Items")
+    login_button = ttk.Button(decision_window,
+                              text="Stock Items",
+                              command=stock_items)
     login_button.grid(column=1, row=3, sticky=tk.W, padx=5, pady=5)
 
     # stock finder button
-    login_button = ttk.Button(decision_window, text="Stock Finder")
+    login_button = ttk.Button(decision_window,
+                              text="Stock Finder",
+                              command=stock_finder)
     login_button.grid(column=1, row=4, sticky=tk.W, padx=5, pady=5)
 
     # stock counter button
-    login_button = ttk.Button(decision_window, text="Stock Counter")
+    login_button = ttk.Button(decision_window,
+                              text="Stock Counter",
+                              command=stock_counter)
     login_button.grid(column=1, row=5, sticky=tk.W, padx=5, pady=5)
 
     # stock sorter button
-    login_button = ttk.Button(decision_window, text="Stock Sorter")
+    login_button = ttk.Button(decision_window,
+                              text="Stock Sorter",
+                              command=stock_sorter)
     login_button.grid(column=1, row=6, sticky=tk.W, padx=5, pady=5)
 
     # shortages button
-    login_button = ttk.Button(decision_window, text="Shortages")
+    login_button = ttk.Button(decision_window,
+                              text="Shortages",
+                              command=shortages)
     login_button.grid(column=1, row=7, sticky=tk.W, padx=5, pady=5)
 
     # orders button
-    login_button = ttk.Button(decision_window, text="Orders")
+    login_button = ttk.Button(decision_window,
+                              text="Orders",
+                              command=orders)
     login_button.grid(column=1, row=8, sticky=tk.W, padx=5, pady=5)
 
     # logout button
-    login_button = ttk.Button(decision_window, text="Logout")
+    login_button = ttk.Button(decision_window,
+                              text="Logout",
+                              command=logout)
     login_button.grid(column=1, row=9, sticky=tk.W, padx=5, pady=5)
 
     decision_window.mainloop()
