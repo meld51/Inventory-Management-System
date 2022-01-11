@@ -40,7 +40,39 @@ except:
 # -- End Windows only configuration --
 
 
+def logout():
+    pass
+
+
+def stock_location():
+    pass
+
+
+def stock_items():
+    pass
+
+
+def stock_finder():
+    pass
+
+def stock_counter():
+    pass
+
+
+def stock_sorter():
+    pass
+
+
+def shortages():
+    pass
+
+
+def orders():
+    pass
+
+
 def choice():
+    """Main choices"""
     decision_window = tk.Tk()
     decision_window.title("Decision Window")
     decision_window.resizable(0, 0)
