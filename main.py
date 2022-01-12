@@ -47,6 +47,29 @@ def size_window():
 def logout():
     pass
 
+def new_stock_location():
+    """When this button is selected the user will be taken to a new window to
+    allow for Stock Location Creation"""
+    pass
+
+def amend_stock_location():
+    """When this button is selected the user will be taken to a new window to
+    allow for location amendment"""
+    pass
+
+def delete_stock_location():
+    """When this button is selected the user will be taken to a new window to
+    allow for location deletion"""
+    pass
+
+
+def print_stock_location():
+    """prints a single stock Location"""
+    pass
+
+def print_all_stock_locations():
+    """prints all stock locations"""
+    pass
 
 def stock_location():
     stock_location_window = tk.Tk()
@@ -56,6 +79,46 @@ def stock_location():
     my_left_pos = (stock_location_window.winfo_screenwidth() - 550) / 2
     my_top_pos = (stock_location_window.winfo_screenheight() - 500) / 2
     stock_location_window.geometry("%dx%d+%d+%d" % (550, 500, my_left_pos, my_top_pos))
+
+    # Create New Location
+    new_location_button = ttk.Button(stock_location_window,
+                              text="Create New Location",
+                              command=new_stock_location)
+    new_location_button.grid(column=1, row=1, sticky=tk.W, padx=5, pady=5)
+
+    # Amend existing stock location
+    amend_location_button = ttk.Button(stock_location_window,
+                                     text="Amend Location",
+                                     command=amend_stock_location)
+    amend_location_button.grid(column=1, row=2, sticky=tk.W, padx=5, pady=5)
+
+    # Delete Location
+    delete_location_button = ttk.Button(stock_location_window,
+                                     text="Delete Location",
+                                     command=delete_stock_location)
+    delete_location_button.grid(column=1, row=3, sticky=tk.W, padx=5, pady=5)
+
+
+    # print a stock location
+    print_all_stock_locations_button = ttk.Button(stock_location_window,
+                                       text="Print Stock Location",
+                                       command=print_stock_location)
+    print_all_stock_locations_button.grid(column=1, row=4, sticky=tk.W, padx=5,
+                                    pady=5)
+
+    # print all stock locations
+    print_location_button = ttk.Button(stock_location_window,
+                                       text="Print All Stock Locations",
+                                       command=print_all_stock_locations)
+    print_location_button.grid(column=1, row=5, sticky=tk.W, padx=5, pady=5)
+
+
+    new_location_button = ttk.Button(stock_location_window,
+                                     text="Create New Location",
+                                     command=new_stock_location)
+    new_location_button.grid(column=1, row=6, sticky=tk.W, padx=5, pady=5)
+
+
 
     stock_location_window.mainloop()
 
@@ -204,6 +267,7 @@ def choice():
 
 def login_window():
     """define login window"""
+    splash_win.destroy()
     login_window = tk.Tk()
     login_window.geometry("240x200")
     login_window.title('Inventory Management System')
