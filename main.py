@@ -48,8 +48,22 @@ def logout():
     pass
 
 def new_stock_location():
-    """When this button is selected the user will be taken to a new window to
-    allow for Stock Location Creation"""
+    """Creates new Stock Location"""
+    new_stock_location_window = tk.Tk()
+    new_stock_location_window.title("New Stock Location")
+
+    loc_info_label = ttk.Label(new_stock_location_window, text="Create New "
+                                                               "Stock Location",
+                               background="#65c09b", foreground="white",
+                               font=("Segoe UI", 25))
+    loc_info_label.grid(column=1, row=1)
+
+    new_stock_location_window.resizable(0, 0)
+    my_left_pos = (new_stock_location_window.winfo_screenwidth() - 550) / 2
+    my_top_pos = (new_stock_location_window.winfo_screenheight() - 500) / 2
+    new_stock_location_window.geometry(
+        "%dx%d+%d+%d" % (550, 500, my_left_pos, my_top_pos))
+
     pass
 
 def amend_stock_location():
@@ -75,6 +89,12 @@ def stock_location():
     stock_location_window = tk.Tk()
     stock_location_window.title("Stock Location Window")
 
+    loc_info_label = ttk.Label(stock_location_window, text="Manage Stock "
+                                                           "Locations",
+                           background="#65c09b", foreground="white",
+                           font=("Segoe UI", 25))
+    loc_info_label.grid(column=1, row=1)
+
     stock_location_window.resizable(0, 0)
     my_left_pos = (stock_location_window.winfo_screenwidth() - 550) / 2
     my_top_pos = (stock_location_window.winfo_screenheight() - 500) / 2
@@ -84,39 +104,38 @@ def stock_location():
     new_location_button = ttk.Button(stock_location_window,
                               text="Create New Location",
                               command=new_stock_location)
-    new_location_button.grid(column=1, row=1, sticky=tk.W, padx=5, pady=5)
+    new_location_button.grid(column=1, row=2, sticky=tk.W, padx=5, pady=5)
 
     # Amend existing stock location
     amend_location_button = ttk.Button(stock_location_window,
                                      text="Amend Location",
                                      command=amend_stock_location)
-    amend_location_button.grid(column=1, row=2, sticky=tk.W, padx=5, pady=5)
+    amend_location_button.grid(column=1, row=3, sticky=tk.W, padx=5, pady=5)
 
     # Delete Location
     delete_location_button = ttk.Button(stock_location_window,
                                      text="Delete Location",
                                      command=delete_stock_location)
-    delete_location_button.grid(column=1, row=3, sticky=tk.W, padx=5, pady=5)
-
+    delete_location_button.grid(column=1, row=4, sticky=tk.W, padx=5, pady=5)
 
     # print a stock location
     print_all_stock_locations_button = ttk.Button(stock_location_window,
                                        text="Print Stock Location",
                                        command=print_stock_location)
-    print_all_stock_locations_button.grid(column=1, row=4, sticky=tk.W, padx=5,
+    print_all_stock_locations_button.grid(column=1, row=5, sticky=tk.W, padx=5,
                                     pady=5)
 
     # print all stock locations
     print_location_button = ttk.Button(stock_location_window,
                                        text="Print All Stock Locations",
                                        command=print_all_stock_locations)
-    print_location_button.grid(column=1, row=5, sticky=tk.W, padx=5, pady=5)
+    print_location_button.grid(column=1, row=6, sticky=tk.W, padx=5, pady=5)
 
 
     new_location_button = ttk.Button(stock_location_window,
                                      text="Create New Location",
                                      command=new_stock_location)
-    new_location_button.grid(column=1, row=6, sticky=tk.W, padx=5, pady=5)
+    new_location_button.grid(column=1, row=7, sticky=tk.W, padx=5, pady=5)
 
 
 
