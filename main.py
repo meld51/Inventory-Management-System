@@ -64,12 +64,15 @@ def new_stock_location():
     new_stock_location_window.geometry("%dx%d+%d+%d" % (550, 500, my_left_pos,
                                                         my_top_pos))
 
-    location_frame = Frame(new_stock_location_window)
+    location_frame = Frame(new_stock_location_window, bg="#65c09b")
     location_frame.grid(column=1, row=2, stick=tk.S, padx=5, pady=5)
 
     # Label and Text widget for entry of primary Location
-    new_loc1_label = ttk.Label(location_frame, text="Primary "
-                                                              "Location")
+    new_loc1_label = ttk.Label(location_frame,
+                               background="#65c09b",
+                               foreground="white",
+                               text="Primary Location")
+
     new_loc1_label.config(font=("Segoe UI", 10))
     new_loc1_label.grid(column=1, row=1, sticky=tk.W, padx=5, pady=5)
 
@@ -78,8 +81,11 @@ def new_stock_location():
     new_loc1_text.grid(column=2, row=1, padx=5, pady=5)
 
     # Label and Text widget for entry of secondary Location
-    new_loc2_label = ttk.Label(location_frame, text="Secondary "
-                                                              "Location")
+    new_loc2_label = ttk.Label(location_frame,
+                               background="#65c09b",
+                               foreground="white",
+                               text="Secondary Location")
+
     new_loc2_label.config(font=("Segoe UI", 10))
     new_loc2_label.grid(column=1, row=2, sticky=tk.W, padx=5, pady=5)
 
@@ -88,8 +94,11 @@ def new_stock_location():
     new_loc2_text.grid(column=2, row=2, padx=5, pady=5)
 
     # Label and Text widget for entry of tertiary Location
-    new_loc3_label = ttk.Label(location_frame, text="Tertiary "
-                                                              "Location")
+    new_loc3_label = ttk.Label(location_frame,
+                               background="#65c09b",
+                               foreground="white",
+                               text="Tertiary Location")
+
     new_loc3_label.config(font=("Segoe UI", 10))
     new_loc3_label.grid(column=1, row=3, sticky=tk.W, padx=5, pady=5)
 
