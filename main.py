@@ -56,7 +56,7 @@ def new_stock_location():
                                                                "Stock Location",
                                background="#65c09b", foreground="white",
                                font=("Segoe UI", 25))
-    loc_info_label.grid(column=1, row=1)
+    loc_info_label.grid(column=1, row=1, sticky=tk.W)
 
     new_stock_location_window.resizable(0, 0)
     my_left_pos = (new_stock_location_window.winfo_screenwidth() - 550) / 2
@@ -64,35 +64,38 @@ def new_stock_location():
     new_stock_location_window.geometry("%dx%d+%d+%d" % (550, 500, my_left_pos,
                                                         my_top_pos))
 
+    location_frame = Frame(new_stock_location_window)
+    location_frame.grid(column=1, row=2, stick=tk.S, padx=5, pady=5)
+
     # Label and Text widget for entry of primary Location
-    new_loc1_label = ttk.Label(new_stock_location_window, text="Primary "
+    new_loc1_label = ttk.Label(location_frame, text="Primary "
                                                               "Location")
     new_loc1_label.config(font=("Segoe UI", 10))
-    new_loc1_label.grid(column=1, row=2, sticky=tk.W, padx=5, pady=5)
+    new_loc1_label.grid(column=1, row=1, sticky=tk.W, padx=5, pady=5)
 
-    new_loc1_text = tk.Text(new_stock_location_window, height=1)
+    new_loc1_text = tk.Text(location_frame, height=1, width=40)
     new_loc1_text.insert("1.0", "Enter a Primary Location")
-    new_loc1_text.grid(column=2, row=2, padx=5, pady=5)
+    new_loc1_text.grid(column=2, row=1, padx=5, pady=5)
 
     # Label and Text widget for entry of secondary Location
-    new_loc2_label = ttk.Label(new_stock_location_window, text="Secondary "
+    new_loc2_label = ttk.Label(location_frame, text="Secondary "
                                                               "Location")
     new_loc2_label.config(font=("Segoe UI", 10))
-    new_loc2_label.grid(column=1, row=3, sticky=tk.W, padx=5, pady=5)
+    new_loc2_label.grid(column=1, row=2, sticky=tk.W, padx=5, pady=5)
 
-    new_loc2_text = tk.Text(new_stock_location_window, height=1)
-    new_loc2_text.insert("1.0", "Enter a Secondary Location")
-    new_loc2_text.grid(column=2, row=3, padx=5, pady=5)
+    new_loc2_text = tk.Text(location_frame, height=1, width=40)
+    new_loc2_text.insert("1.0", "Enter a Secondary")
+    new_loc2_text.grid(column=2, row=2, padx=5, pady=5)
 
     # Label and Text widget for entry of tertiary Location
-    new_loc3_label = ttk.Label(new_stock_location_window, text="Tertiary "
+    new_loc3_label = ttk.Label(location_frame, text="Tertiary "
                                                               "Location")
     new_loc3_label.config(font=("Segoe UI", 10))
-    new_loc3_label.grid(column=1, row=4, sticky=tk.W, padx=5, pady=5)
+    new_loc3_label.grid(column=1, row=3, sticky=tk.W, padx=5, pady=5)
 
-    new_loc3_text = tk.Text(new_stock_location_window, height=1)
-    new_loc3_text.insert("1.0", "Enter a Secondary Location")
-    new_loc3_text.grid(column=2, row=4, padx=5, pady=5)
+    new_loc3_text = tk.Text(location_frame, height=1, width=40)
+    new_loc3_text.insert("1.0", "Enter a Tertiary Location")
+    new_loc3_text.grid(column=2, row=3, sticky=tk.W, padx=5, pady=5)
 
 
 def amend_stock_location():
@@ -372,7 +375,7 @@ def login_window():
     login_window.mainloop()
 
 
-# Create an instance of tkinter frame
+# Create an instance of tkinter location_frame
 splash_win = tk.Tk()
 splash_win.title('Inventory Management System')
 splash_win.resizable(0, 0)
