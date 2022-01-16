@@ -39,7 +39,6 @@ except:
     pass
 # -- End Windows only configuration --
 
-
 def size_window():
     pass
 
@@ -47,9 +46,28 @@ def size_window():
 def logout():
     pass
 
+
+def submit():
+    primary = primary_loc.get()
+    print(primary)
+    #primary_loc.set("")
+
+
+
+
+
 def new_stock_location():
     """Creates new Stock Location"""
     new_stock_location_window = tk.Tk()
+
+    global primary_loc
+    global secondary_loc
+    global tertiary_loc
+
+    primary_loc = tk.StringVar()
+    secondary_loc = tk.StringVar()
+    tertiary_loc = tk.StringVar()
+
     new_stock_location_window.title("New Stock Location")
 
     loc_info_label = ttk.Label(new_stock_location_window, text="Create New "
@@ -67,7 +85,7 @@ def new_stock_location():
     location_frame = Frame(new_stock_location_window, bg="#65c09b")
     location_frame.grid(column=1, row=2, stick=tk.S, padx=5, pady=5)
 
-    # Label and Text widget for entry of primary Location
+    # Label and Entry widget for entry of primary Location
     new_loc1_label = ttk.Label(location_frame,
                                background="#65c09b",
                                foreground="white",
@@ -76,8 +94,8 @@ def new_stock_location():
     new_loc1_label.config(font=("Segoe UI", 10))
     new_loc1_label.grid(column=1, row=1, sticky=tk.W, padx=5, pady=5)
 
-    new_loc1_text = tk.Text(location_frame, height=1, width=40)
-    new_loc1_text.insert("1.0", "Enter a Primary Location")
+    new_loc1_text = tk.Entry(location_frame, textvariable=primary_loc)
+    #new_loc1_text.insert("1.0", "Enter a Primary Location")
     new_loc1_text.grid(column=2, row=1, padx=5, pady=5)
 
     # Label and Text widget for entry of secondary Location
@@ -89,8 +107,8 @@ def new_stock_location():
     new_loc2_label.config(font=("Segoe UI", 10))
     new_loc2_label.grid(column=1, row=2, sticky=tk.W, padx=5, pady=5)
 
-    new_loc2_text = tk.Text(location_frame, height=1, width=40)
-    new_loc2_text.insert("1.0", "Enter a Secondary")
+    new_loc2_text = tk.Entry(location_frame, textvariable=secondary_loc)
+    #new_loc2_text.insert("1.0", "Enter a Secondary")
     new_loc2_text.grid(column=2, row=2, padx=5, pady=5)
 
     # Label and Text widget for entry of tertiary Location
@@ -102,9 +120,18 @@ def new_stock_location():
     new_loc3_label.config(font=("Segoe UI", 10))
     new_loc3_label.grid(column=1, row=3, sticky=tk.W, padx=5, pady=5)
 
-    new_loc3_text = tk.Text(location_frame, height=1, width=40)
-    new_loc3_text.insert("1.0", "Enter a Tertiary Location")
+    new_loc3_text = tk.Entry(location_frame, textvariable=tertiary_loc)
+    #new_loc3_text.insert("1.0", "Enter a Tertiary Location")
     new_loc3_text.grid(column=2, row=3, sticky=tk.W, padx=5, pady=5)
+
+    sub_btn = tk.Button(location_frame, text='Submit', command=submit)
+    sub_btn.grid(column=1, row=4)
+
+
+
+
+
+
 
 
 def amend_stock_location():
