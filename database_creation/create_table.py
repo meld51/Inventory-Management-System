@@ -1,5 +1,5 @@
 """
-Created by Mel Davies on 13/01/2022
+Created by Mel Davies on 30/12/2021
 PROGRAMMING LANGUAGE: Python 3
 SCRIPT NAME:
 VERSION = 0.0
@@ -10,11 +10,12 @@ INTERFACE: Command Line or Pycharm
 DEVELOPMENT ENVIRONMENT: Pycharm
 NON FUNCTIONAL REQUIREMENTS:
 FUNCTIONAL REQUIREMENTS:
-TESTING: 
+TESTING:
 PyLint:
 Unit Test:
 REMAINING PROBLEMS
 DESCRIPTION OF FUNCTIONALITY
+
 """
 import mysql.connector
 
@@ -22,15 +23,18 @@ mydb = mysql.connector.connect(
     host = "localhost",
     user = "root",
     passwd = "Melsic1710@#",
-    database = "dims",
+    database = "mels_trial_database",
 )
 
 my_cursor = mydb.cursor()
-my_cursor.execute("CREATE TABLE locations (primary_location VARCHAR(255),"
-                  "secondary_location VARCHAR (255),"
-                  "tertiary_location VARCHAR (255), location_id INTEGER "
-                  "AUTO_INCREMENT PRIMARY "
-                  "KEY)")
+my_cursor.execute("CREATE TABLE users"
+                  "(user_id INTEGER(10),"
+                  "name VARCHAR(255),"
+                  "email VARCHAR(255),"
+                  "age INTEGER(10))"
+                  )
+
 my_cursor.execute("SHOW TABLES")
 for table in my_cursor:
     print(table[0])
+
