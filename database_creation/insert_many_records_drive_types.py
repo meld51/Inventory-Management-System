@@ -1,5 +1,5 @@
 """
-Created by Mel Davies on 11/05/2022
+Created by Mel Davies on 12/05/2022
 PROGRAMMING LANGUAGE: Python 3
 SCRIPT NAME:
 VERSION = 0.0
@@ -16,6 +16,7 @@ Unit Test:
 REMAINING PROBLEMS
 DESCRIPTION OF FUNCTIONALITY
 """
+
 import mysql.connector
 
 mydb = mysql.connector.connect(
@@ -26,12 +27,17 @@ mydb = mysql.connector.connect(
 )
 
 my_cursor = mydb.cursor()
-my_cursor.execute("CREATE TABLE drive_types"
-                  "(drive_id INTEGER AUTO_INCREMENT PRIMARY KEY,"
-                  "screwdriver_type VARCHAR(255),"
-                  "blank VARCHAR(255))"
-                  )
 
-my_cursor.execute("SHOW TABLES")
-for table in my_cursor:
-    print(table[0])
+many_records = "INSERT INTO drive_types(screwdriver_type, blank) VALUES (%s, " \
+               "%s)"
+
+# NOTE: This won't work if each record has a singler input. Don't know why!
+records = [
+    ("Slotted", "blank"),
+    ("Pozidriv", "blank"),
+    ("Philips", "blank"),
+    ("Torx", "blank")
+]
+
+my_cursor.executemany(many_records, records)
+mydb.commit()
